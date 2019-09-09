@@ -3,27 +3,29 @@ let firstValue
 let secondValue
 let selectedOperator
 
-/*const numberOnClick= function(event){
-  display.innerText+=event.target.textContent
-}*/
-
-const ggFunction= function (event) {
+//Numeros en el display
+const onClickFunction= function (event) {
   display.innerText += event.target.textContent
 }
 
+//Limpia el display
 const cleanFunction= function(event) {
   display.innerText=''
 }
 
+//Darle funcion a los operadores
 const operatorFunction = function () {
   firstValue = parseFloat(display.innerText)
   display.innerText = ''
   selectedOperator = event.target.textContent
 }
+
+//Pone el punto
 const pointFunction= function() {
   display.innerText+='.'
 }
 
+//Realiza las operaciones y las muestra en el display
 const resultFunction = function (event) {
   secondValue = parseFloat(display.innerText)
   let result
@@ -73,16 +75,16 @@ const btnPoint= document.getElementById("btn.")
 const btnEqual= document.getElementById("btn=")
 
 //numeros en el display
-btnOne.onclick= ggFunction
-btnTwo.onclick=ggFunction
-btnThree.onclick=ggFunction
-btnFour.onclick=ggFunction
-btnFive.onclick=ggFunction
-btnSix.onclick=ggFunction
-btnSeven.onclick=ggFunction
-btnEight.onclick=ggFunction
-btnNine.onclick=ggFunction
-btnCero.onclick=ggFunction
+btnOne.onclick= onClickFunction
+btnTwo.onclick=onClickFunction
+btnThree.onclick=onClickFunction
+btnFour.onclick=onClickFunction
+btnFive.onclick=onClickFunction
+btnSix.onclick=onClickFunction
+btnSeven.onclick=onClickFunction
+btnEight.onclick=onClickFunction
+btnNine.onclick=onClickFunction
+btnCero.onclick=onClickFunction
 
 btnC.onclick=cleanFunction
 
@@ -95,48 +97,3 @@ btnPlus.onclick=operatorFunction
 
 btnEqual.onclick=resultFunction
 }
-
-//limpiar el display
-
-
-/*
-//darle funcion a los operadores
-const operatorFunction= function(event){
-  firstValue= parseFloat(display.innerText);
-  display.innerText=""
-  selectedOperator=event.target.textContent
-  }
-
-btnDiv.onclick=operatorFunction
-btnMult.onclick=operatorFunction
-
-
-
-//boton de igual
-btnEqual.onclick= function(event){
-  secondValue= parseFloat(display.innerText)
-  let result
-  switch (selectedOperator) {
-    case "+":
-      result= firstValue+secondValue
-      break;
-      case "-":
-        result= firstValue-secondValue
-        break;
-        case "*":
-          result= firstValue*secondValue
-          break;
-          case "/":
-            result= firstValue/secondValue
-            break;
-    default:
-    break;
-      }
-      display.innerText= result
-
-    }
-
-  /*}
-btnOne.onclick= function(event){
-  display.innerText+=event.target.textContent
-}*/
