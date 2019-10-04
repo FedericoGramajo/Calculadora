@@ -1,10 +1,10 @@
-window.onload = function () {
 
   let firstValue
   let secondValue
   let selectedOperator
   let memoryNumber=0
 
+  window.onload = function () {
 
   const display= document.getElementById("display")
   const btnOne= document.getElementById("btnOne")
@@ -45,7 +45,7 @@ const operatorFunction = function () {
   selectedOperator = event.target.textContent
   display.innerText = ''
   console.log("firstValue", firstValue)
-  console.log("selectedOperator", selectedOperator0)
+  console.log("selectedOperator", selectedOperator)
 }
 
 //Pone el punto
@@ -117,6 +117,7 @@ btnEqual.onclick = function(){
       "Content-Type":"application/json",
     }
   }
+
   fetch(`http://localhost:3000/getresult/${firstValue}/${secondValue}/${selectedOperator}`,option)
   .then(res =>res.json())
   .then((response)=> {
